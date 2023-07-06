@@ -11,4 +11,5 @@
     <SolidColorBrush x:Key="fgContactName" Color="#F5F5F5" />
     <SolidColorBrush x:Key="fgLastText" Color="#7F91A4" />
     <SolidColorBrush x:Key="bgValueCountMessage" Color="#3E546A" />
+    <SolidColorBrush x:Key="bgTextBoxSearch" Color="#242F3D" />
 </ResourceDictionary>

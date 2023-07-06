@@ -7,6 +7,7 @@
     <Style TargetType="{x:Type local:ccItemChat}">
         <Setter Property="MinHeight" Value="60" />
         <Setter Property="Width" Value="380" />
+        <Setter Property="Margin" Value="0 0 35 0"/>
         <Setter Property="Background" Value="{DynamicResource bgMenuChats}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -151,4 +152,37 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type local:ccTextBox}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="5,0,0,0" />
+        <Setter Property="Width" Value="420" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Background" Value="{DynamicResource bgTextBoxSearch}" />
+        <Setter Property="FontFamily" Value="Open Sans" />
+        <Setter Property="Foreground" Value="{DynamicResource fgTextSearch}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ccTextBox}">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                        <StackPanel Orientation="Horizontal">
+
+                            <ScrollViewer
+                                x:Name="PART_ContentHost"
+                                HorizontalScrollBarVisibility="Hidden"
+                                VerticalScrollBarVisibility="Hidden" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+
+
+
 </ResourceDictionary>

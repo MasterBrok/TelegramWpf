@@ -26,6 +26,39 @@
                 <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="Path">
+                            <Setter Property="Fill" Value="{DynamicResource bgFillItems}" />
+                            <Setter Property="Stroke" Value="{DynamicResource bgFillItems}" />
+                            <Setter Property="Stretch" Value="Uniform" />
+                            <Setter Property="Width" Value="30" />
+                            <Setter Property="Height" Value="30" />
+                            <Setter Property="HorizontalAlignment" Value="Left" />
+                            <Setter Property="VerticalAlignment" Value="Top" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <cc:ccTextBox
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        Text="@MasterBrok" />
+                    <Path Margin="0,12,0,0" Data="{DynamicResource Lock}" />
+                </StackPanel>
+                <ScrollViewer
+                    x:Name="svItems"
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource StyleScrollViewerTelegramMain}">
+                    <StackPanel x:Name="spChats" Orientation="Vertical" />
+                </ScrollViewer>
+            </Grid>
             <StatusBar
                 Grid.Row="0"
                 Grid.Column="0"
@@ -33,15 +66,6 @@
                 MouseDoubleClick="StatusBar_MouseDoubleClick"
                 MouseDown="StatusBar_MouseDown"
                 Style="{StaticResource ResourceKey=StyleStautsTelegramMain}" />
-            <!--#region Chat Item-->
-            <ScrollViewer
-                x:Name="svItems"
-                Grid.Row="1"
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                Style="{StaticResource StyleScrollViewerTelegramMain}">
-                <StackPanel x:Name="spChats" Orientation="Vertical" />
-            </ScrollViewer>
             <Grid Grid.Row="1" Grid.Column="2">
                 <Label
                     HorizontalAlignment="Center"
@@ -52,7 +76,6 @@
                     FontWeight="SemiBold"
                     Foreground="{StaticResource fgTextSearch}" />
             </Grid>
-            <!--#endregion-->
             <StackPanel Grid.Row="1" Grid.Column="0">
                 <cc:ccFolder Content="Channel" Value="{StaticResource Folder}" />
                 <cc:ccFolder Content="Chats" Value="{StaticResource Chat}" />
