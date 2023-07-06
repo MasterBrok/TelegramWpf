@@ -2,6 +2,7 @@
     x:Class="TelegramWpf.Windows.wTelegram"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cc="clr-namespace:TelegramWpf.CustomControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TelegramWpf.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -18,23 +19,31 @@
     <Border Style="{StaticResource ResourceKey=StyleBorderTelegramMain}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80" />
-                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
             <StatusBar
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Style="{StaticResource ResourceKey=StyleStautsTelegramMain}" />
-
             <StackPanel
                 Grid.Row="1"
-                Grid.Column="0"
-                Orientation="Vertical" />
-
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                Orientation="Vertical">
+                <StackPanel>
+                    <cc:ccItemChat />
+                    <cc:ccItemChat />
+                    <cc:ccItemChat />
+                </StackPanel>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

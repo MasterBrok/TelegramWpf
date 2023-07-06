@@ -1,8 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="bgMenuItems" Color="#0E1621" />
+    <!--  ==> Generic MenuItem  -->
     <SolidColorBrush x:Key="bgMenuChats" Color="#17212B" />
     <SolidColorBrush x:Key="bgMainWindow" Color="#0E1621" />
     <SolidColorBrush x:Key="bgFillItems" Color="#768C9E" />
+    <!--  ==> Generic MenuItem  -->
     <SolidColorBrush x:Key="bgSelectItems" Color="#2B5278" />
     <SolidColorBrush x:Key="fgTextSearch" Color="#F5F5F5" />
     <SolidColorBrush x:Key="bgStausBarTop" Color="#242F3D" />
