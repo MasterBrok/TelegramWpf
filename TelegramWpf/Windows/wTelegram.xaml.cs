@@ -25,9 +25,13 @@ namespace TelegramWpf.Windows
         public wTelegram()
         {
             InitializeComponent();
+            Data.ListProfile.Profiles.ToList().ForEach(value =>
+            {
+                spChats.Children.Add(new ccItemChat() { ValueContext = value });
+            });
         }
 
-        private void wMain_MouseDown(object sender, MouseButtonEventArgs e)
+        private void StatusBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
@@ -35,11 +39,9 @@ namespace TelegramWpf.Windows
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void StatusBar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            ccItemChat chat = new ccItemChat();
-            chat.ValueContext = new Models.Profile("Brok","Hi",DateTime.Now.ToString(),"",6);
-            spChats.Children.Add(chat);
+            this.WindowState = WindowState.Normal;
         }
     }
 }

@@ -12,19 +12,19 @@ namespace TelegramWpf.Models
         public string LastMessage { get; set; }
         public string DateTime{ get; set; }
         public string ImageProfile { get; set; }
-        public int MeesageCount{ get; set; }
+        public int MessageCount{ get; set; }
         public Profile()
         {
             
         }
 
-        public Profile(string contactName, string lastMessage, string dateTime, string imageProfile, int meesageCount)
+        public Profile(string contactName, string lastMessage, string dateTime, string imageProfile, int messageCount)
         {
             ContactName = contactName;
             LastMessage = lastMessage;
             DateTime = dateTime;
             ImageProfile = imageProfile;
-            MeesageCount = meesageCount;
+            MessageCount = messageCount;
         }
     }
 }

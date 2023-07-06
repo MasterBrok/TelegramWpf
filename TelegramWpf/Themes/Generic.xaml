@@ -56,7 +56,7 @@
                                 Opacity=".7">
                                 <Label
                                     HorizontalContentAlignment="Center"
-                                    Content="{Binding MeesageCount}"
+                                    Content="{Binding MessageCount}"
                                     FontWeight="Medium"
                                     Foreground="{DynamicResource fgTextSearch}" />
                             </Border>

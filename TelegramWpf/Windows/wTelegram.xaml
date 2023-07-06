@@ -11,7 +11,6 @@
     Height="700"
     AllowsTransparency="True"
     Background="Transparent"
-    MouseDown="wMain_MouseDown"
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -27,11 +26,12 @@
                 <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
             <StatusBar
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
+                MouseDoubleClick="StatusBar_MouseDoubleClick"
+                MouseDown="StatusBar_MouseDown"
                 Style="{StaticResource ResourceKey=StyleStautsTelegramMain}" />
             <!--#region Chat Item-->
             <ScrollViewer
@@ -53,7 +53,6 @@
                     Foreground="{StaticResource fgTextSearch}" />
             </Grid>
             <!--#endregion-->
-
             <StackPanel Grid.Row="1" Grid.Column="0">
                 <cc:ccFolder Content="Channel" Value="{StaticResource Folder}" />
                 <cc:ccFolder Content="Chats" Value="{StaticResource Chat}" />
@@ -61,8 +60,6 @@
                 <cc:ccFolder Content="Bots" Value="{StaticResource Bot}" />
                 <cc:ccFolder Content="Developers" Value="{StaticResource Folder}" />
             </StackPanel>
-
-
         </Grid>
     </Border>
 </Window>
