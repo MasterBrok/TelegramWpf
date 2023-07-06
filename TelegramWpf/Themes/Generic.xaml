@@ -7,7 +7,7 @@
     <Style TargetType="{x:Type local:ccItemChat}">
         <Setter Property="MinHeight" Value="60" />
         <Setter Property="Width" Value="380" />
-        <Setter Property="Margin" Value="0 0 35 0"/>
+        <Setter Property="Margin" Value="0,0,35,0" />
         <Setter Property="Background" Value="{DynamicResource bgMenuChats}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -91,9 +91,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
-
     <Style TargetType="{x:Type local:ccFolder}">
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="FontFamily" Value="Open Sans" />
@@ -111,7 +108,6 @@
                             <Setter Property="Width" Value="50" />
                             <Setter Property="Height" Value="50" />
                         </Style>
-
                     </ControlTemplate.Resources>
                     <StackPanel
                         x:Name="spMain"
@@ -152,7 +148,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style TargetType="{x:Type local:ccTextBox}">
         <Setter Property="Margin" Value="5" />
         <Setter Property="Padding" Value="5,0,0,0" />
@@ -177,12 +172,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
-
-
-
-
-
-
 </ResourceDictionary>
