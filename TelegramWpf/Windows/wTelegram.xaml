@@ -19,7 +19,7 @@
     <Border Style="{StaticResource ResourceKey=StyleBorderTelegramMain}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -27,23 +27,36 @@
                 <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <Button Height="20" Click="Button_Click" />
+            </StackPanel>
             <StatusBar
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Style="{StaticResource ResourceKey=StyleStautsTelegramMain}" />
-            <StackPanel
+            <ScrollViewer
+                x:Name="svItems"
                 Grid.Row="1"
                 Grid.Column="1"
                 HorizontalAlignment="Center"
-                Orientation="Vertical">
-                <StackPanel>
-                    <cc:ccItemChat />
-                    <cc:ccItemChat />
-                    <cc:ccItemChat />
+                Style="{StaticResource StyleScrollViewerTelegramMain}">
+                <StackPanel x:Name="spChats" Orientation="Vertical" >
+                    <Menu x:Name="menuItems">
+                        
+                    </Menu>
                 </StackPanel>
-            </StackPanel>
+            </ScrollViewer>
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Label FontFamily="Open Sans"
+                       FontWeight="SemiBold"
+                       Content="Select a Chat to start Messaging"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="25"
+                       Foreground="{StaticResource fgTextSearch}"
+                       />
+            </Grid>
         </Grid>
     </Border>
 </Window>

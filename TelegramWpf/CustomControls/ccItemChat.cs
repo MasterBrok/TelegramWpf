@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -44,12 +45,21 @@ namespace TelegramWpf.CustomControls
     ///     <MyNamespace:ccItemChat/>
     ///
     /// </summary>
-    public class ccItemChat : MenuItem
+    public class ccItemChat : Button
     {
         static ccItemChat()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ccItemChat), new FrameworkPropertyMetadata(typeof(ccItemChat)));
         }
+        public object ValueContext
+        {
+            get { return (object)GetValue(ValueContextProperty); }
+            set { SetValue(ValueContextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ValueContext.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ValueContextProperty =
+            DependencyProperty.Register("ValueContext", typeof(object), typeof(ccItemChat), new PropertyMetadata(default));
 
 
         public ImageSource Source

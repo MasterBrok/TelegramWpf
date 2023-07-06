@@ -8,4 +8,7 @@
     <SolidColorBrush x:Key="bgSelectItems" Color="#2B5278" />
     <SolidColorBrush x:Key="fgTextSearch" Color="#F5F5F5" />
     <SolidColorBrush x:Key="bgStausBarTop" Color="#242F3D" />
+    <SolidColorBrush x:Key="fgContactName" Color="#F5F5F5" />
+    <SolidColorBrush x:Key="fgLastText" Color="#7F91A4" />
+    <SolidColorBrush x:Key="bgValueCountMessage" Color="#3E546A" />
 </ResourceDictionary>

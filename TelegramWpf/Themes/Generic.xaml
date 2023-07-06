@@ -1,18 +1,28 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:TelegramWpf.CustomControls">
+    xmlns:local="clr-namespace:TelegramWpf.CustomControls"
+    xmlns:models="clr-namespace:TelegramWpf.Models">
 
     <Style TargetType="{x:Type local:ccItemChat}">
-        <Setter Property="MinHeight" Value="70" />
-        <Setter Property="MaxWidth" Value="380" />
-        <Setter Property="MinWidth" Value="350" />
+        <Setter Property="MinHeight" Value="60" />
+        <Setter Property="Width" Value="380" />
         <Setter Property="Background" Value="{DynamicResource bgMenuChats}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ccItemChat}">
-                    <Border x:Name="miItem" Background="{TemplateBinding Background}">
+                    <Border
+                        x:Name="miItem"
+                        Background="{TemplateBinding Background}"
+                        DataContext="{TemplateBinding ValueContext}">
                         <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="Label">
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                    <Setter Property="FontFamily" Value="Open Sans" />
+                                    <Setter Property="Foreground" Value="{DynamicResource fgContactName}" />
+                                </Style>
+                            </Grid.Resources>
                             <StackPanel Orientation="Horizontal">
                                 <Ellipse
                                     Width="50"
@@ -23,17 +33,39 @@
                                     </Ellipse.Fill>
                                 </Ellipse>
                                 <StackPanel Orientation="Vertical">
-                                    <Label Content="UserName" />
-                                    <Label Content="Text" />
+                                    <Label Content="{Binding ContactName}" />
+                                    <Label
+                                        Margin="0,8,0,0"
+                                        Content="{Binding LastMessage}"
+                                        FontWeight="ExtraLight"
+                                        Foreground="{DynamicResource fgLastText}" />
                                 </StackPanel>
                             </StackPanel>
-                            <Label HorizontalAlignment="Right" Content="Date" />
+                            <Label
+                                HorizontalAlignment="Right"
+                                Content="{Binding DateTime}"
+                                FontWeight="ExtraLight"
+                                Foreground="{DynamicResource fgLastText}" />
+                            <Border
+                                Width="40"
+                                Margin="0,0,0,9"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="{DynamicResource bgValueCountMessage}"
+                                CornerRadius="10"
+                                Opacity=".7">
+                                <Label
+                                    HorizontalContentAlignment="Center"
+                                    Content="{Binding MeesageCount}"
+                                    FontWeight="Medium"
+                                    Foreground="{DynamicResource fgTextSearch}" />
+                            </Border>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
                             <Trigger.EnterActions>
-                                <BeginStoryboard>
+                                <BeginStoryboard x:Name="bsIsMouseOver">
                                     <Storyboard>
                                         <ColorAnimation
                                             Storyboard.TargetName="miItem"
@@ -47,18 +79,7 @@
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
                             <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation
-                                            Storyboard.TargetName="miItem"
-                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
-                                            To="#17212B">
-                                            <ColorAnimation.EasingFunction>
-                                                <QuarticEase EasingMode="EaseOut" />
-                                            </ColorAnimation.EasingFunction>
-                                        </ColorAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
+                                <RemoveStoryboard BeginStoryboardName="bsIsMouseOver" />
                             </Trigger.ExitActions>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
