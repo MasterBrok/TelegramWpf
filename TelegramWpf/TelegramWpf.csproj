@@ -11,11 +11,8 @@
     <Folder Include="Models\" />
     <Folder Include="CustomControls\" />
     <Folder Include="UserControls\" />
-    <Folder Include="Styles\" />
     <Folder Include="Resources\Fonts\" />
-    <Folder Include="Resources\Colors\" />
     <Folder Include="Resources\Svgs\" />
-    <Folder Include="Windows\" />
   </ItemGroup>
 
 </Project>
