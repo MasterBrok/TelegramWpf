@@ -10,5 +10,4 @@
         <Setter Property="VerticalScrollBarVisibility" Value="Hidden" />
         <Setter Property="HorizontalScrollBarVisibility" Value="Hidden" />
     </Style>
-
 </ResourceDictionary>

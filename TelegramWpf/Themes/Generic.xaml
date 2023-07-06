@@ -91,4 +91,63 @@
         </Setter>
     </Style>
 
+
+
+    <Style TargetType="{x:Type local:ccFolder}">
+
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontFamily" Value="Open Sans" />
+        <Setter Property="Foreground" Value="{DynamicResource fgLastText}" />
+        <Setter Property="Background" Value="{DynamicResource bgMenuChats}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ccFolder}">
+                    <ControlTemplate.Resources>
+                        <!--  Style Path wTelegram  -->
+                        <Style TargetType="Path">
+                            <Setter Property="Width" Value="20" />
+                            <Setter Property="Height" Value="20" />
+                            <Setter Property="Fill" Value="{DynamicResource bgFillItems}" />
+                            <Setter Property="Stroke" Value="{DynamicResource bgFillItems}" />
+                            <Setter Property="Stretch" Value="Uniform" />
+                            <Setter Property="Width" Value="50" />
+                            <Setter Property="Height" Value="50" />
+                        </Style>
+
+                    </ControlTemplate.Resources>
+                    <StackPanel
+                        x:Name="spMain"
+                        Background="Transparent"
+                        Orientation="Vertical">
+                        <Path x:Name="svg" Data="{TemplateBinding Value}" />
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="bsIsMouseOver">
+                                    <Storyboard Duration="0:0:3">
+                                        <ColorAnimation
+                                            Storyboard.TargetName="spMain"
+                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                            To="#25303E" />
+                                        <ColorAnimation
+                                            Storyboard.TargetName="svg"
+                                            Storyboard.TargetProperty="(Fill).(SolidColorBrush.Color)"
+                                            To="#5EB5F7" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <RemoveStoryboard BeginStoryboardName="bsIsMouseOver" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="spMain" Property="Opacity" Value="0.6" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

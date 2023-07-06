@@ -38,7 +38,6 @@ namespace TelegramWpf.Windows
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ccItemChat chat = new ccItemChat();
-            
             chat.ValueContext = new Models.Profile("Brok","Hi",DateTime.Now.ToString(),"",6);
             spChats.Children.Add(chat);
         }

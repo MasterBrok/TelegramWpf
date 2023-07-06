@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Resources/Colors/Colors.xaml" />
                 <ResourceDictionary Source="Styles/PanelStyles.xaml" />
                 <ResourceDictionary Source="Styles/ControlStyles.xaml" />
+                <ResourceDictionary Source="Resources/Svgs/PathGeometrys.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Data\" />
     <Folder Include="UserControls\" />
-    <Folder Include="Resources\Fonts\" />
-    <Folder Include="Resources\Svgs\" />
   </ItemGroup>
 
 </Project>

@@ -27,36 +27,42 @@
                 <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="1" Grid.Column="0">
-                <Button Height="20" Click="Button_Click" />
-            </StackPanel>
+
             <StatusBar
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Style="{StaticResource ResourceKey=StyleStautsTelegramMain}" />
+            <!--#region Chat Item-->
             <ScrollViewer
                 x:Name="svItems"
                 Grid.Row="1"
                 Grid.Column="1"
                 HorizontalAlignment="Center"
                 Style="{StaticResource StyleScrollViewerTelegramMain}">
-                <StackPanel x:Name="spChats" Orientation="Vertical" >
-                    <Menu x:Name="menuItems">
-                        
-                    </Menu>
-                </StackPanel>
+                <StackPanel x:Name="spChats" Orientation="Vertical" />
             </ScrollViewer>
             <Grid Grid.Row="1" Grid.Column="2">
-                <Label FontFamily="Open Sans"
-                       FontWeight="SemiBold"
-                       Content="Select a Chat to start Messaging"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontSize="25"
-                       Foreground="{StaticResource fgTextSearch}"
-                       />
+                <Label
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="Select a Chat to start Messaging"
+                    FontFamily="Open Sans"
+                    FontSize="25"
+                    FontWeight="SemiBold"
+                    Foreground="{StaticResource fgTextSearch}" />
             </Grid>
+            <!--#endregion-->
+
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <cc:ccFolder Content="Channel" Value="{StaticResource Folder}" />
+                <cc:ccFolder Content="Chats" Value="{StaticResource Chat}" />
+                <cc:ccFolder Content="Group" Value="{StaticResource Chat}" />
+                <cc:ccFolder Content="Bots" Value="{StaticResource Bot}" />
+                <cc:ccFolder Content="Developers" Value="{StaticResource Folder}" />
+            </StackPanel>
+
+
         </Grid>
     </Border>
 </Window>
