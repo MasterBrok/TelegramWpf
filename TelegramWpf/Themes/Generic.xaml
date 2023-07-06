@@ -29,7 +29,7 @@
                                     Height="50"
                                     Margin="3,0,0,0">
                                     <Ellipse.Fill>
-                                        <ImageBrush ImageSource="{TemplateBinding Source}" Stretch="UniformToFill" />
+                                        <ImageBrush ImageSource="{Binding ImageProfile}" Stretch="UniformToFill" />
                                     </Ellipse.Fill>
                                 </Ellipse>
                                 <StackPanel Orientation="Vertical">
@@ -94,7 +94,6 @@
 
 
     <Style TargetType="{x:Type local:ccFolder}">
-
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="FontFamily" Value="Open Sans" />
         <Setter Property="Foreground" Value="{DynamicResource fgLastText}" />
@@ -105,8 +104,6 @@
                     <ControlTemplate.Resources>
                         <!--  Style Path wTelegram  -->
                         <Style TargetType="Path">
-                            <Setter Property="Width" Value="20" />
-                            <Setter Property="Height" Value="20" />
                             <Setter Property="Fill" Value="{DynamicResource bgFillItems}" />
                             <Setter Property="Stroke" Value="{DynamicResource bgFillItems}" />
                             <Setter Property="Stretch" Value="Uniform" />
@@ -119,7 +116,11 @@
                         x:Name="spMain"
                         Background="Transparent"
                         Orientation="Vertical">
-                        <Path x:Name="svg" Data="{TemplateBinding Value}" />
+                        <Path
+                            x:Name="svg"
+                            Width="20"
+                            Height="40"
+                            Data="{TemplateBinding Value}" />
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                     </StackPanel>
                     <ControlTemplate.Triggers>

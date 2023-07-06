@@ -8,7 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UserControls\" />
+    <None Remove="Resources\Images\Img1.jpg" />
+    <None Remove="Resources\Images\Img2.jpg" />
+    <None Remove="Resources\Images\Img3.jpg" />
+    <None Remove="Resources\Images\Img4.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\Img1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Img2.jpg" />
+    <Resource Include="Resources\Images\Img3.jpg" />
+    <Resource Include="Resources\Images\Img4.jpg" />
   </ItemGroup>
 
 </Project>
